@@ -8,6 +8,10 @@ import java.util.Date;
 public class Client {
 
     @Id
+    @Basic(optional = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
+    private Integer id;
     @Column(name = "name")
     private String name;
     @Column(name = "gender")

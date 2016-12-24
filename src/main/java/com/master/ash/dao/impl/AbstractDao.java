@@ -33,8 +33,7 @@ public abstract class AbstractDao<T> implements BaseDao<T> {
         session.update(t);
     }
 
-    @Override
-    final public T get(Class<T> c, Serializable id) {
+    protected T get(Class<T> c, Serializable id) {
         Session session = getSession();
         return (T) session.get(c, id);
     }

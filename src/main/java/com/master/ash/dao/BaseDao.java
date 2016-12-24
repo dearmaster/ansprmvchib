@@ -8,7 +8,7 @@ public interface BaseDao<T> {
     void save(T t);
     void delete(T t);
     void update(T t);
-    T get(Class<T> c, Serializable id);
+    T get(Serializable id);
     Set<T> load();
 
 }

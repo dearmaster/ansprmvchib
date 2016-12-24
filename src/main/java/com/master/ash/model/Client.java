@@ -1,5 +1,7 @@
 package com.master.ash.model;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -16,7 +18,9 @@ public class Client {
     private String name;
     @Column(name = "gender")
     private String gender;
+    //@JSONField is used to format the date type, from fastjson
     @Column(name = "birthday")
+    @JSONField(format = "yyyy-MM-dd")
     private Date birthday;
     @Column(name = "address")
     private String address;

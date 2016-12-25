@@ -32,7 +32,14 @@
             </ul>
         </div>
 
-        <div id="content" ng-view></div>
+        <div class="panel panel-primary" id="main-container">
+            <div class="panel-heading">
+                <h3 class="panel-title">所有用户</h3>
+            </div>
+            <div class="panel-body">
+                <div id="content" ng-view></div>
+            </div>
+        </div>
 
     </div>
 

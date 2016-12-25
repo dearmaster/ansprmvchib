@@ -40,6 +40,8 @@
     <script src="<%= ctx%>/js/angular.js"></script>
     <script src="<%= ctx%>/js/angular-route.js"></script>
     <script src="<%= ctx%>/js/RouteConfigApp.js"></script>
+    <script src="<%= ctx%>/js/jquery-2.1.1.js"></script>
+    <script src="<%= ctx%>/js/bootstrap.js"></script>
     <script src="<%= ctx%>/controller/ClientController.js"></script>
 
 

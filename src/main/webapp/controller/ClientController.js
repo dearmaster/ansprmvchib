@@ -23,7 +23,8 @@ RouteConfigApp.controller('ClientController', function ($scope, $http) {
         }
     }
 
-    $scope.editClient = function() {
+    $scope.editClient = function(obj) {
+        console.log(obj);
         alert('edit');
     }
 

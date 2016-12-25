@@ -6,9 +6,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.Serializable;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public abstract class AbstractDao<T> implements BaseDao<T> {
 
@@ -38,11 +36,11 @@ public abstract class AbstractDao<T> implements BaseDao<T> {
         return (T) session.get(c, id);
     }
 
-    protected Set<T> load(Class<T> c) {
+    protected List<T> load(Class<T> c) {
         String hql = "from " + c.getSimpleName();
         Session session = getSession();
         List<T> list = session.createQuery(hql).list();
-        return new HashSet<>(list);
+        return list;
     }
 
     final protected Session getSession() {

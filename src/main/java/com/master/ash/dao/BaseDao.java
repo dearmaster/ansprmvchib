@@ -1,7 +1,7 @@
 package com.master.ash.dao;
 
 import java.io.Serializable;
-import java.util.Set;
+import java.util.List;
 
 public interface BaseDao<T> {
 
@@ -9,6 +9,6 @@ public interface BaseDao<T> {
     void delete(T t);
     void update(T t);
     T get(Serializable id);
-    Set<T> load();
+    List<T> load();
 
 }

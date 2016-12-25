@@ -2,10 +2,10 @@ package com.master.ash.dao;
 
 import com.master.ash.model.Client;
 
-import java.util.Set;
+import java.util.List;
 
 public interface ClientDao extends BaseDao<Client> {
 
-    Set<Client> findByName(String name);
+    List<Client> findByName(String name);
 
 }

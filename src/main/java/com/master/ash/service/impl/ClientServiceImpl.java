@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Set;
+import java.util.List;
 
 @Service("clientService")
 @Transactional
@@ -32,12 +32,12 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public Set<Client> findByName(String name) {
+    public List<Client> findByName(String name) {
         return clientDao.findByName(name);
     }
 
     @Override
-    public Set<Client> load() {
+    public List<Client> load() {
         return clientDao.load();
     }
 

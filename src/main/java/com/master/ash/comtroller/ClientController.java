@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.Set;
+import java.util.List;
 
 @Controller
 @RequestMapping("client")
@@ -22,12 +22,12 @@ public class ClientController {
 
     @RequestMapping(method = RequestMethod.GET, value = "load")
     @ResponseBody
-    public Set<Client> load() {
-        Set<Client> set = clientService.load();
+    public List<Client> load() {
+        List<Client> list = clientService.load();
         if(logger.isDebugEnabled()) {
-            logger.debug(set);
+            logger.debug(list);
         }
-        return set;
+        return list;
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "delete")

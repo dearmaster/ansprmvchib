@@ -10,7 +10,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.text.SimpleDateFormat;
-import java.util.Set;
+import java.util.List;
 
 @Rollback(false)
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -29,7 +29,7 @@ public class ClientServiceImplTest {
 
     @Test
     public void delete() throws Exception {
-        Set<Client> clients = clientService.findByName("Lucy");
+        List<Client> clients = clientService.findByName("Lucy");
         for(Client client : clients) {
             clientService.delete(client);
         }
@@ -42,13 +42,13 @@ public class ClientServiceImplTest {
 
     @Test
     public void findByName() throws Exception {
-        Set<Client> clients = clientService.findByName("Lucy");
+        List<Client> clients = clientService.findByName("Lucy");
         System.out.println(clients);
     }
 
     @Test
     public void load() throws Exception {
-        Set<Client> clients = clientService.load();
+        List<Client> clients = clientService.load();
         System.out.println(clients);
     }
 

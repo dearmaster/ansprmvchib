@@ -1,6 +1,9 @@
 package com.master.ash.dao.impl;
 
 import com.master.ash.dao.BaseDao;
+import com.master.ash.util.pagination.Pagination;
+import com.master.ash.util.pagination.PaginationUtil;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +48,22 @@ public abstract class AbstractDao<T> implements BaseDao<T> {
 
     final protected Session getSession() {
         return sessionFactory.getCurrentSession();
+    }
+
+    public Pagination paginationLoad(Class<T> c, int pageSize, int currentPageIndex) {
+        String dataHql = "from " + c.getSimpleName();
+        String countHql = "select count(*) from " + c.getSimpleName();
+        Session session = getSession();
+        Query query = session.createQuery(dataHql);
+
+        int totalRecordsNumber = Integer.parseInt(session.createQuery(countHql).list().get(0).toString());
+
+        int firstResult = PaginationUtil.getOffset(pageSize, currentPageIndex);
+        query.setFirstResult(firstResult);
+        query.setMaxResults(pageSize);
+
+        List<T> list = query.list();
+        return PaginationUtil.getPagination(list, totalRecordsNumber, pageSize, currentPageIndex);
     }
 
 }

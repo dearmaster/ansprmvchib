@@ -2,6 +2,7 @@ package com.master.ash.dao.impl;
 
 import com.master.ash.dao.ClientDao;
 import com.master.ash.model.Client;
+import com.master.ash.util.pagination.Pagination;
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 
@@ -31,4 +32,11 @@ public class ClientDaoImpl extends AbstractDao<Client> implements ClientDao {
         List<Client> list = session.createQuery(HQL_CREDENTIAL_FIND_BY_USERNAME).setParameter("name", name).list();
         return list;
     }
+
+    @Override
+    public Pagination paginationLoad(int pageSize, int currentPageIndex) {
+        return super.paginationLoad(Client.class, pageSize, currentPageIndex);
+    }
+
+
 }

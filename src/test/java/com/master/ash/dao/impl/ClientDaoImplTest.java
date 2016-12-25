@@ -2,8 +2,12 @@ package com.master.ash.dao.impl;
 
 import com.master.ash.dao.ClientDao;
 import com.master.ash.model.Client;
+import com.master.ash.util.pagination.Pagination;
 import org.apache.log4j.Logger;
-import org.junit.*;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.Rollback;
@@ -13,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.text.SimpleDateFormat;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Transactional
@@ -38,7 +43,7 @@ public class ClientDaoImplTest {
 
     @Test
     public void load() throws Exception {
-        Set<Client> clients = clientDao.load();
+        List<Client> clients = clientDao.load();
         logger.info(clients.size());
         Assert.assertNotNull(clients);
     }
@@ -65,4 +70,9 @@ public class ClientDaoImplTest {
         }
     }
 
+    @Test
+    public void paginationLoad() throws Exception {
+        Pagination pagination = clientDao.paginationLoad(10, 1);
+        System.out.println(pagination);
+    }
 }

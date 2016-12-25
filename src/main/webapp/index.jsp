@@ -33,11 +33,11 @@
         </div>
 
         <div class="panel panel-primary" id="main-container">
-            <div class="panel-heading">
+            <div class="panel-heading" data-toggle="collapse" href="#content">
                 <h3 class="panel-title">所有用户</h3>
             </div>
-            <div class="panel-body">
-                <div id="content" ng-view></div>
+            <div class="panel-body panel-collapse collapse in" id="content">
+                <div ng-view></div>
             </div>
         </div>
 

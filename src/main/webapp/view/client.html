@@ -32,6 +32,19 @@
             </td>
         </tr>
     </table>
+
+    <div class="text-center" ng-if="hasModels">
+        <ul class="pagination pagination-sm">
+            <li><a href="#">&laquo;</a></li>
+            <li><a href="#">1</a></li>
+            <li class="active"><a href="#">2</a></li>
+            <li class="disabled"><a>3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">&raquo;</a></li>
+        </ul>
+    </div>
+
     <h3 ng-if="!hasModels">No clients found.</h3>
 </div>
 

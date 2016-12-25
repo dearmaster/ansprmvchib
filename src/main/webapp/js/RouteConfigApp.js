@@ -20,6 +20,14 @@ var routeConfig = function($routeProvider) {
             templateUrl: 'view/report.html',
             controller: 'ReportController'
         })
+        .when('/user/login', {
+            templateUrl: 'view/login.html',
+            controller: 'UserLoginController'
+        })
+        .when('/user/register', {
+            templateUrl: 'view/register.html',
+            controller: 'UserRegistrationController'
+        })
         .otherwise({redirectTo: '/'});
 };
 

@@ -17,9 +17,9 @@
 
         <div id="banner">
             <div id="log-reg">
-                <a href="#user/login">登录</a>
+                <a href="#/user/login">登录</a>
                 |
-                <a href="#user/register">注册</a>
+                <a href="#/user/register">注册</a>
             </div>
         </div>
         <div id="nav">

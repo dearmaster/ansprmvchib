@@ -20,14 +20,15 @@
             <td>{{ model.mail }}</td>
             <td>{{ model.birthday }}</td>
             <td class="noborder">
-                <button class="btn" ng-click="deleteClient(model)">
+                <!--<button class="btn btn-primary btn-sm" ng-click="deleteClient(model)">
                     <span class="glyphicon glyphicon-remove"></span>
-                </button>
+                </button>-->
+                <span class="glyphicon glyphicon-remove" style="color: #337ab7;" ng-click="deleteClient(model)"></span>
             </td>
             <td class="noborder">
-                <button class="btn" data-toggle="modal" data-target="#myModal">
-                    <span class="glyphicon glyphicon-pencil"></span>
-                </button>
+                <!--<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">-->
+                    <span class="glyphicon glyphicon-pencil" style="color: #337ab7;" data-toggle="modal" data-target="#myModal"></span>
+                <!--</button>-->
             </td>
         </tr>
     </table>

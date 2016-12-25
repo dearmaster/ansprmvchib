@@ -15,8 +15,14 @@
 
     <div id="main">
 
-        <div style="height: 150px;width: 1000px;background-image: url('<%=ctx %>/image/banner.png')"></div>
-        <div id="header">
+        <div id="banner">
+            <div id="log-reg">
+                <a href="#user/login">登录</a>
+                |
+                <a href="#user/register">注册</a>
+            </div>
+        </div>
+        <div id="nav">
             <ul class="nav nav-pills">
                 <li><a href="#/">首页</a></li>
                 <li><a href="#/client">客户管理</a></li>

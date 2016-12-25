@@ -3,6 +3,7 @@ package com.master.ash.service.impl;
 import com.master.ash.dao.ClientDao;
 import com.master.ash.model.Client;
 import com.master.ash.service.ClientService;
+import com.master.ash.util.pagination.Pagination;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -39,6 +40,11 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public List<Client> load() {
         return clientDao.load();
+    }
+
+    @Override
+    public Pagination paginationLoad(int pageSize, int currentPageIndex) {
+        return clientDao.paginationLoad(pageSize, currentPageIndex);
     }
 
 }

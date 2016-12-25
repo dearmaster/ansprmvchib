@@ -30,4 +30,15 @@ public class ClientController {
         return set;
     }
 
+    @RequestMapping(method = RequestMethod.POST, value = "delete")
+    @ResponseBody
+    public boolean delete(Client client) {
+        try {
+            clientService.delete(client);
+        } catch (Throwable t) {
+            logger.error("Error in deleting client", t);
+        }
+        return true;
+    }
+
 }

@@ -1,37 +1,42 @@
-<div ng-init="hasModels=false">
-    <table ng-if="hasModels">
-        <tr>
-            <th ng-click="orderByMe('name')">姓名</th>
-            <th ng-click="orderByMe('gender')">性别</th>
-            <th ng-click="orderByMe('firm')">公司</th>
-            <th>住址</th>
-            <th>电话</th>
-            <th>邮箱</th>
-            <th>生日</th>
-            <th class="noborder"></th>
-            <th class="noborder"></th>
-        </tr>
-        <tr ng-repeat="model in clients | orderBy:orderByKey">
-            <td>{{ model.name }}</td>
-            <td>{{ model.gender }}</td>
-            <td>{{ model.firm }}</td>
-            <td>{{ model.address }}</td>
-            <td>{{ model.phone }}</td>
-            <td>{{ model.mail }}</td>
-            <td>{{ model.birthday }}</td>
-            <td class="noborder">
-                <button class="btn" ng-click="deleteClient(model)">
-                    <span class="glyphicon glyphicon-remove"></span>删除
-                </button>
-            </td>
-            <td class="noborder">
-                <button class="btn" data-toggle="modal" data-target="#myModal">
-                    <span class="glyphicon glyphicon-pencil"></span>修改
-                </button>
-            </td>
-        </tr>
-    </table>
-    <h3 ng-if="!hasModels">No clients found.</h3>
+<div ng-init="hasModels=false" class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">所有用户</h3>
+    </div>
+    <div class="panel-body">
+        <table ng-if="hasModels">
+            <tr>
+                <th ng-click="orderByMe('name')">姓名</th>
+                <th ng-click="orderByMe('gender')">性别</th>
+                <th ng-click="orderByMe('firm')">公司</th>
+                <th>住址</th>
+                <th>电话</th>
+                <th>邮箱</th>
+                <th>生日</th>
+                <th class="noborder"></th>
+                <th class="noborder"></th>
+            </tr>
+            <tr ng-repeat="model in clients | orderBy:orderByKey">
+                <td>{{ model.name }}</td>
+                <td>{{ model.gender }}</td>
+                <td>{{ model.firm }}</td>
+                <td>{{ model.address }}</td>
+                <td>{{ model.phone }}</td>
+                <td>{{ model.mail }}</td>
+                <td>{{ model.birthday }}</td>
+                <td class="noborder">
+                    <button class="btn" ng-click="deleteClient(model)">
+                        <span class="glyphicon glyphicon-remove"></span>删除
+                    </button>
+                </td>
+                <td class="noborder">
+                    <button class="btn" data-toggle="modal" data-target="#myModal">
+                        <span class="glyphicon glyphicon-pencil"></span>修改
+                    </button>
+                </td>
+            </tr>
+        </table>
+        <h3 ng-if="!hasModels">No clients found.</h3>
+    </div>
 </div>
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

@@ -37,6 +37,7 @@
     <orderEntry type="library" name="Maven: javax.servlet:javax.servlet-api:3.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.derby:derbyLocale_zh_CN:10.12.1.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.derby:derby:10.12.1.1" level="project" />
+    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.20" level="project" />
     <orderEntry type="library" name="Maven: commons-dbcp:commons-dbcp:20030825.184428" level="project" />
     <orderEntry type="library" name="Maven: commons-pool:commons-pool:20030825.183949" level="project" />
     <orderEntry type="library" name="Maven: commons-collections:commons-collections:20040616" level="project" />
